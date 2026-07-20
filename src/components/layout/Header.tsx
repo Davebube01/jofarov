@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Logo = () => (
+const Logo = ({ isWhite = false }: { isWhite?: boolean }) => (
   <div className="flex items-center gap-2 group">
     <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-primary transform group-hover:rotate-90 transition-transform duration-700 ease-in-out">
       {/* Central Node */}
@@ -16,7 +16,7 @@ const Logo = () => (
       <ellipse cx="50" cy="50" rx="40" ry="15" transform="rotate(60 50 50)" stroke="currentColor" strokeWidth="4" fill="none" />
       <ellipse cx="50" cy="50" rx="40" ry="15" transform="rotate(120 50 50)" stroke="currentColor" strokeWidth="4" fill="none" />
     </svg>
-    <span className="font-heading font-bold text-xl md:text-2xl tracking-tight text-foreground transition-colors group-hover:text-primary">
+    <span className={`font-heading font-bold text-xl md:text-2xl tracking-tight transition-colors group-hover:text-primary ${isWhite ? 'text-white' : 'text-foreground'}`}>
       Jofarov Synergy Ltd
     </span>
   </div>
@@ -47,12 +47,15 @@ export function Navbar() {
     { name: "Contact", path: "/contact" },
   ];
 
+  const isTransparentPath = pathname === '/';
+  const isTransparent = !isScrolled && isTransparentPath;
+
   return (
     <header 
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled 
           ? "bg-white/95 backdrop-blur-md shadow-sm py-3" 
-          : pathname === '/' 
+          : isTransparentPath 
             ? "bg-transparent py-5" 
             : "bg-white shadow-sm py-3"
       }`}
@@ -60,7 +63,7 @@ export function Navbar() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link href="/" className="z-50 relative">
-            <Logo />
+            <Logo isWhite={isTransparent && !mobileMenuOpen} />
           </Link>
 
           {/* Desktop Nav */}
@@ -73,7 +76,7 @@ export function Navbar() {
                     className={`font-medium text-sm tracking-wide uppercase transition-colors duration-200 ${
                       pathname === link.path
                         ? "text-primary font-semibold"
-                        : (isScrolled || pathname !== '/') ? "text-slate-700 hover:text-primary" : "text-white hover:text-primary-foreground"
+                        : (!isTransparent) ? "text-slate-700 hover:text-primary" : "text-white hover:text-primary-foreground"
                     }`}
                   >
                     {link.name}
@@ -84,7 +87,7 @@ export function Navbar() {
             <Link 
               href="/contact" 
               className={`font-medium px-6 py-2.5 rounded-sm transition-all duration-300 shadow-sm hover:shadow-md ${
-                (isScrolled || pathname !== '/') 
+                (!isTransparent) 
                   ? "bg-primary text-primary-foreground hover:bg-secondary" 
                   : "bg-primary text-white hover:bg-white hover:text-primary"
               }`}
@@ -100,9 +103,9 @@ export function Navbar() {
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
-              <X className="w-6 h-6 text-foreground" />
+              <X className={`w-6 h-6 ${(!isTransparent || mobileMenuOpen) ? "text-foreground" : "text-white"}`} />
             ) : (
-              <Menu className={`w-6 h-6 ${(!isScrolled && pathname === '/') ? 'text-white' : 'text-foreground'}`} />
+              <Menu className={`w-6 h-6 ${(!isTransparent || mobileMenuOpen) ? "text-foreground" : "text-white"}`} />
             )}
           </button>
         </div>

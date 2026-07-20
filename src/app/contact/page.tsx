@@ -17,6 +17,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from ".././../components/ui/button";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import contactHeroImg from "../../../public/attached/contact-hero.jpg";
 
 const contactFormSchema = z.object({
   fullName: z.string().min(2, "Name must be at least 2 characters"),
@@ -55,8 +56,13 @@ export default function Contact() {
   return (
     <div className="w-full pt-20">
       {/* Page Header */}
-      <section className="bg-secondary py-20 relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="bg-secondary py-32 relative overflow-hidden flex items-center">
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${contactHeroImg.src})` }}
+        />
+        <div className="absolute inset-0 z-10 bg-slate-900/70" />
+        <div className="container mx-auto px-4 relative z-20">
           <FadeIn>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-4">
               Get In Touch
