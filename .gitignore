@@ -52,3 +52,6 @@ next-env.d.ts
 # OS Files
 Thumbs.db
 Desktop.ini
+
+# Custom Scratch Files
+fetch_images.js

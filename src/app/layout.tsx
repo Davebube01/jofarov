@@ -18,6 +18,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Jofarov",
   description: "Premium Web Application",
+  icons: {
+    icon: "/attached/fav.png",
+    apple: "/attached/fav.png", 
+  },
 };
 
 export default function RootLayout({
@@ -32,9 +36,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col font-sans">
         <Header />
-        <main className="flex-1 flex flex-col">
-          {children}
-        </main>
+        <main className="flex-1 flex flex-col">{children}</main>
         <Footer />
         <Toaster />
       </body>

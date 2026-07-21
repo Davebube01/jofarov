@@ -66,7 +66,7 @@ export default function Home() {
             </FadeIn>
             <FadeIn delay={0.2} direction="none">
               <h3 className="text-4xl md:text-5xl font-bold font-heading text-primary mb-2">
-                <CountUp end={500} suffix="+" />
+                <CountUp end={50} suffix="+" />
               </h3>
               <p className="text-sm md:text-base font-medium text-slate-300">Projects Delivered</p>
             </FadeIn>
@@ -99,7 +99,7 @@ export default function Home() {
                     alt="Jofarov Engineers" 
                     className="relative z-10 w-full h-[500px] object-cover rounded-sm shadow-xl"
                   />
-                  <div className="absolute -bottom-6 -left-6 bg-secondary text-white p-6 z-20 shadow-xl max-w-xs border-l-4 border-primary">
+                  <div className="absolute -bottom-6 -left-6 bg-primary text-white p-6 z-20 shadow-xl max-w-xs border-l-4 border-primary">
                     <p className="font-heading font-bold text-xl mb-1">Commanding Trust</p>
                     <p className="text-sm opacity-90">Building the nation's framework, one project at a time.</p>
                   </div>

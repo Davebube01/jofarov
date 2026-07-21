@@ -118,7 +118,7 @@ export default function About() {
               { icon: Leaf, title: "Sustainability", desc: "Environmentally responsible construction practices." }
             ].map((val, idx) => (
               <FadeIn key={idx} delay={idx * 0.1}>
-                <div className="flex gap-4 p-6 bg-slate-50 rounded-sm border border-slate-100 h-full">
+                <div className="flex gap-4 p-6 bg-slate-50 rounded-sm border border-slate-100 h-full  hover:bg-secondary transition">
                   <div className="shrink-0 mt-1">
                     <val.icon className="w-6 h-6 text-primary" />
                   </div>

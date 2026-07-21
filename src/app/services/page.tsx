@@ -13,13 +13,13 @@ import {
   PenTool,
   Drill,
   ArrowRight,
-  Link
 } from "lucide-react";
+import Link from "next/link";
 import s1 from "../../../public/attached/service-1.jpg";
 import s2 from "../../../public/attached/service-2.jpg";
 import s3 from "../../../public/attached/service-3.jpg";
 import s4 from "../../../public/attached/service-4.jpg";
-import s5 from "../../../public/attached/service-5.jpg";
+import s5 from "../../../public/attached/service-5-pm-construction-new.jpg";
 import s6 from "../../../public/attached/service-6.jpg";
 import servicesHeroImg from "../../../public/attached/services-hero.jpg";
 import Image from "next/image";

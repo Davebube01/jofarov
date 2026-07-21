@@ -44,7 +44,8 @@ export function Navbar() {
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
     { name: "Services", path: "/services" },
-    { name: "Contact", path: "/contact" },
+    { name: "Projects", path: "/projetcs" },
+  
   ];
 
   const isTransparentPath = pathname === '/';
@@ -92,7 +93,7 @@ export function Navbar() {
                   : "bg-primary text-white hover:bg-white hover:text-primary"
               }`}
             >
-              Get Quote
+              Contact Us
             </Link>
           </nav>
 
@@ -136,7 +137,7 @@ export function Navbar() {
                 href="/contact"
                 className="mt-4 bg-primary text-center text-white py-3 px-4 rounded-md font-medium text-lg hover:bg-secondary transition-colors"
               >
-                Get Quote
+                Contact Us
               </Link>
             </div>
           </motion.div>

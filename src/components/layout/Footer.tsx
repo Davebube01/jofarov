@@ -59,7 +59,7 @@ export function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span>2 Owena Street, Suncity Estate, FCT Abuja, Nigeria</span>
+                <span>Wing G 2nd floor Bassan Plaza beside National Library CBA</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
@@ -70,7 +70,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
-                <span>shaibu20@yahoo.com</span>
+                <span>contact@jafarov.com</span>
               </li>
             </ul>
           </div>
