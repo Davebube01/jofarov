@@ -11,7 +11,7 @@ const projects = [
     icon: Pickaxe,
     features: ["Mineral Extraction", "Site Assessment", "Sustainable Operations"],
     color: "from-amber-500 to-orange-600",
-    image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=800&auto=format&fit=crop"
+    image: "/mining/mining1.jpeg"
   },
   {
     title: "Road Construction & Rehabilitation",
@@ -123,6 +123,35 @@ export default function ProjectsPage() {
         </div>
       </section>
       
+      {/* Mining Gallery Section */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <FadeIn>
+              <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-3">Gallery</h2>
+              <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
+                Mining Operations Showcase
+              </h3>
+              <div className="w-24 h-1 bg-primary mx-auto mt-6 rounded-full" />
+            </FadeIn>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[1, 2, 3, 4, 5, 6].map((num, index) => (
+              <FadeIn key={num} delay={index * 0.1}>
+                <div className="relative overflow-hidden rounded-xl h-72 group shadow-md hover:shadow-xl transition-all duration-300">
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700"
+                    style={{ backgroundImage: `url('/mining/mining${num}.jpeg')` }}
+                  />
+                  <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors duration-300" />
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-primary">
         <div className="container mx-auto px-4 text-center">
